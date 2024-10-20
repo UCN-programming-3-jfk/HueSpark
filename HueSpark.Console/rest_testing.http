@@ -1,0 +1,86 @@
+@serverUrl = http://192.168.1.100/api 
+@username=nOUSgAbLjknrHt-5eQmbRauCm3BuFoeJXaXQsdMt
+
+# HUE S.P.A.R.K. – SMARTBULBS, PROGRAMMING, ALGORITHMS, RESTFULNESS, KNOW-HOW
+# For more info on HTTP files go to https://aka.ms/vs/httpfile           
+#                                                                                       
+# HTTPCLIENT                                                                            
+#  - https://learn.microsoft.com/en-us/dotnet/fundamentals/networking/http/httpclient   
+#                                                                                       
+# RESTSHARP                                                                             
+# - https://restsharp.dev/docs/next/category/using-restsharp/                           
+#                                                                                       
+# HUE API                                                                               
+# - https://developers.meethue.com/develop/get-started-2/                               
+# - https://developers.meethue.com/develop/get-started-2/core-concepts/ (login required)
+# - https://github.com/tigoe/hue-control?tab=readme-ov-file (3rd party documentation)   
+                                                                                       
+
+POST {{serverUrl}}
+{"devicetype":"John Doe"}
+###
+GET {{serverUrl}}/{{username}}/config
+###
+GET {{serverUrl}}/{{Username}}/lights/
+###
+GET {{serverUrl}}/{{Username}}/sensors/
+###
+GET {{serverUrl}}/{{Username}}/lights/5
+
+###
+PUT {{serverUrl}}/{{Username}}/lights/1/state
+{
+  "on": true
+}
+###
+PUT {{serverUrl}}/{{Username}}/lights/1/state
+{
+  "on": true,
+  "hue": 65000,
+  "bri": 50,
+  "sat": 255
+}
+### 
+PUT {{serverUrl}}/{{Username}}/lights/2/state
+{
+  "xy":[0.55,0.42],
+  "sat": 254,
+  "bri": 50
+}
+###
+
+PUT {{serverUrl}}/{{Username}}/lights/3/state
+{
+  "xy":[0.2,0.7],   
+  "sat": 254,
+  "bri": 50
+}
+
+###
+PUT {{serverUrl}}/{{Username}}/lights/3/state
+{
+  "xy":[0.13,0.08],   
+  "sat": 254,
+  "bri": 50
+}
+
+###
+
+PUT {{serverUrl}}/{{Username}}/lights/4/state
+{
+  "ct":400,
+  "sat": 254,
+  "bri": 50
+}
+###
+
+GET https://orders.codesamples.dk/api/orders
+
+###
+POST https://orders.codesamples.dk/api/orders/create
+{
+  "orderNumber": 69
+}
+
+###
+PUT https://orders.codesamples.dk/api/orders/3?newState=ReadyForPickup
