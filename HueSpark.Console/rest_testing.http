@@ -1,5 +1,5 @@
 @serverUrl = http://192.168.1.100/api 
-@username=nOUSgAbLjknrHt-5eQmbRauCm3BuFoeJXaXQsdMt
+@username=ajtEQ9EZRb7jYnDpHLQbfqWqFGhJTaApYQYt02Ns
 
 # HUE S.P.A.R.K. – SMARTBULBS, PROGRAMMING, ALGORITHMS, RESTFULNESS, KNOW-HOW
 # For more info on HTTP files go to https://aka.ms/vs/httpfile           
@@ -21,16 +21,15 @@ POST {{serverUrl}}
 ###
 GET {{serverUrl}}/{{username}}/config
 ###
-GET {{serverUrl}}/{{Username}}/lights/
+GET {{serverUrl}}/{{Username}}/lights/3
 ###
 GET {{serverUrl}}/{{Username}}/sensors/
 ###
-GET {{serverUrl}}/{{Username}}/lights/5
-
+GET {{serverUrl}}/{{Username}}/lights/2 
 ###
-PUT {{serverUrl}}/{{Username}}/lights/1/state
+PUT {{serverUrl}}/{{Username}}/lights/2/state
 {
-  "on": true
+  "on": false
 }
 ###
 PUT {{serverUrl}}/{{Username}}/lights/1/state
@@ -43,6 +42,7 @@ PUT {{serverUrl}}/{{Username}}/lights/1/state
 ### 
 PUT {{serverUrl}}/{{Username}}/lights/2/state
 {
+  "on" : true
   "xy":[0.55,0.42],
   "sat": 254,
   "bri": 50
@@ -55,7 +55,6 @@ PUT {{serverUrl}}/{{Username}}/lights/3/state
   "sat": 254,
   "bri": 50
 }
-
 ###
 PUT {{serverUrl}}/{{Username}}/lights/3/state
 {
@@ -73,14 +72,3 @@ PUT {{serverUrl}}/{{Username}}/lights/4/state
   "bri": 50
 }
 ###
-
-GET https://orders.codesamples.dk/api/orders
-
-###
-POST https://orders.codesamples.dk/api/orders/create
-{
-  "orderNumber": 69
-}
-
-###
-PUT https://orders.codesamples.dk/api/orders/3?newState=ReadyForPickup
